@@ -1,6 +1,6 @@
 # LLM-Augmented Entity Linking
 
-Datasets, scripts, and fine-tuned model for the paper LLMAEL: Large Language Models are Good Context Augmenters for Entity Linking.
+Anonymized datasets, scripts, and fine-tuned model for the paper LLMAEL: Large Language Models are Good Context Augmenters for Entity Linking.
 
 * Fine-tuned ReFinED model on 🤗HuggingFace: [LLMAEL-REFINED-FT](https://huggingface.co/pixel-puppy-530/LLMAEL-ReFinED-FT)
 
