@@ -1,9 +1,6 @@
 # LLM-Augmented Entity Linking
 
-Anonymized datasets, scripts, and fine-tuned model for the paper LLMAEL: Large Language Models are Good Context Augmenters for Entity Linking.
-
-* Fine-tuned ReFinED model on 🤗HuggingFace: [LLMAEL-REFINED-FT](https://huggingface.co/pixel-puppy-530/LLMAEL-ReFinED-FT)
-
+Anonymized datasets and scripts for the paper LLMAEL: Large Language Models are Good Context Augmenters for Entity Linking.
 
 We introduce <b>LLM</b>-<b>A</b>ugmented <b>E</b>ntity <b>L</b>inking (<b>LLMAEL</b>), a plug-and-play approach to enhance entity linking through LLM data augmentation. We leverage LLMs as knowledgeable context augmenters, generating mention-centered descriptions as additional input, while preserving traditional EL models for EL execution. Experiments on 6 standard datasets show that the vanilla LLMAEL outperforms baseline EL models in most cases, while the fine-tuned LLMAEL sets the new state-of-the-art results across all 6 benchmarks. Compared to prior
 methods that integrate tuning-free LLMs into EL, LLMAEL achieves an absolute 8.9% gain in EL accuracy, demonstrating the superiority of our framework design.
@@ -39,16 +36,11 @@ python augment_refined_datasets_with_llm.py
 with your custom parameters `--llm_name`, `--join_strategy`, `--original_benchmarks_path`, `--llm_contexts_path`, `--output_path`.
 
 
-## To Download our Fine-tuned ReFinED Model
-
-Please download from our 🤗HuggingFace hub: [LLMAEL-REFINED-FT](https://huggingface.co/pixel-puppy-530/LLMAEL-ReFinED-FT)
-
-
 ## To Reproduce our Results
 
 1. Clone the official github repositories of our 3 selected EL models: [BLINK](https://github.com/facebookresearch/BLINK), [GENRE](https://github.com/facebookresearch/GENRE), and [ReFinED](https://github.com/amazon-science/ReFinED)
 2. Find the official test script of each model, respectively
-3. Change the test datasets to our augmented datasets from `llm_augmented_el_benchmarks`, and run the official test script. Our main experiments are conducted using the 6 augmented test sets synthesized under context-joining strategy 4. For the vanilla LLMAEL, we used BLINK's full cross-encoder model, GENRE's AIDA model without the candidate set, and ReFinED's AIDA model. For fine-tuned LLMAEL, we customly fine-tuned ReFinED's wikipedia model using Llama3-70-b augmented AIDA train dataset. 
+3. Change the test datasets to our augmented datasets from `llm_augmented_el_benchmarks`, and run the official test script. Our main experiments are conducted using the 6 augmented test sets synthesized under context-joining strategy 4. For the vanilla LLMAEL, we used BLINK's full cross-encoder model, GENRE's AIDA model without the candidate set, and ReFinED's AIDA model. For fine-tuned LLMAEL, we customly fine-tuned ReFinED's wikipedia model using the Llama3-70b augmented AIDA train dataset, where the model and fine-tuning scripts can be found in [ReFinED's official github repository](https://github.com/amazon-science/ReFinED). 
 
 Our results (accuracy) are as follows:
 | Method | AIDA | MSNBC |  AQUA  | ACE04  | CWEB | WIKI | AVG |
