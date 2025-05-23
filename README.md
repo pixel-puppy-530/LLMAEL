@@ -1,6 +1,6 @@
-# LLM-Augmented Entity Linking
+# LLMAEL: LLM-Augmented Entity Linking
 
-Anonymized datasets and scripts for the paper LLMAEL: Large Language Models are Good Context Augmenters for Entity Linking.
+Anonymized datasets and scripts for the paper ***LLMAEL: Large Language Models are Good Context Augmenters for Entity Linking***.
 
 We introduce <b>LLM</b>-<b>A</b>ugmented <b>E</b>ntity <b>L</b>inking (<b>LLMAEL</b>), a plug-and-play approach to enhance entity linking through LLM data augmentation. We leverage LLMs as knowledgeable context augmenters, generating mention-centered descriptions as additional input, while preserving traditional EL models for EL execution. Experiments on 6 standard datasets show that the vanilla LLMAEL outperforms baseline EL models in most cases, while the fine-tuned LLMAEL sets the new state-of-the-art results across all 6 benchmarks. Compared to prior
 methods that integrate tuning-free LLMs into EL, LLMAEL achieves an absolute 8.9% gain in EL accuracy, demonstrating the superiority of our framework design.
